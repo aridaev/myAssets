@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('areas', AreaController::class)->except(['show']);
     Route::resource('locations', LocationController::class)->except(['show']);
     Route::resource('employees', EmployeeController::class)->except(['show']);
+    Route::get('employees/download-template', [EmployeeController::class, 'downloadTemplate'])->name('employees.download-template');
 
     // API untuk get areas by location
     Route::get('/api/locations/{location}/areas', [AreaController::class, 'getByLocation'])->name('api.areas.by-location');

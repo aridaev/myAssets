@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Exports\EmployeeTemplateExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -69,5 +71,10 @@ class EmployeeController extends Controller
 
         $employee->delete();
         return redirect()->route('employees.index')->with('success', 'Karyawan berhasil dihapus.');
+    }
+
+    public function downloadTemplate()
+    {
+        return Excel::download(new EmployeeTemplateExport, 'template_karyawan.xlsx');
     }
 }
