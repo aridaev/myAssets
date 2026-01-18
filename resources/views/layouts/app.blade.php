@@ -13,13 +13,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <style>
-            body { font-family: 'Inter', sans-serif; }
-            .sidebar-link { @apply flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-all duration-200; }
-            .sidebar-link:hover { @apply bg-gray-700 text-white; }
-            .sidebar-link.active { @apply bg-blue-600 text-white; }
-            .sidebar-link svg { @apply w-5 h-5 flex-shrink-0; }
-        </style>
     </head>
     <body class="font-sans antialiased bg-gray-50">
         <div x-data="{ sidebarOpen: false }" class="min-h-screen flex">
